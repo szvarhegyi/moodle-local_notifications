@@ -1,0 +1,5 @@
+{
+  "plugintypes": {
+    "notificationtype": "local/notifications/types"
+  }
+}
