@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Custom notifications
+ * Configurable notifications - Course closed notification
  *
  * @package     local_notifications
  * @copyright   Várhegyi Szabolcs <sz.varhegyi@gmail.com>
@@ -26,5 +26,5 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'notificationtype_course_closed';
 $plugin->release = '1.0.0';
-$plugin->version = 2020072831;
+$plugin->version = 2020081301;
 $plugin->maturity = MATURITY_STABLE;

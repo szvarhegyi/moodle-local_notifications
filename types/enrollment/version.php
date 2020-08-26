@@ -26,5 +26,5 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'notificationtype_enrollment';
 $plugin->release = '1.0.0';
-$plugin->version = 2020072830;
+$plugin->version = 2020081301;
 $plugin->maturity = MATURITY_STABLE;

@@ -41,8 +41,8 @@ class course_started_student extends \core\task\scheduled_task
     public function execute()
     {
         global $DB;
-        $start = strtotime(date('Y-m-d 00:00:00'));
-        $end = strtotime(date('Y-m-d 23:59:59'));
+        $start = $this->get_last_run_time();
+        $end = time();
         mtrace('Kurzusok keresese amik ebben az idointervallumban indultak ' . date('Y-m-d H:i:s', $start) . " - " . date('Y-m-d H:i:s', $end));
         $courses = $DB->get_records_sql("SELECT * FROM {course} WHERE startdate BETWEEN ? AND ? AND visible = ?", [
             $start, $end, 1

@@ -22,18 +22,18 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace notificationtype_course_started;
+namespace notificationtype_course_available;
 
 
 use core_user;
 use \local_notifications\notification;
 use \local_notifications\notification_type;
 
-class course_closed_notification extends notification implements notification_type {
+class course_available_notification extends notification implements notification_type {
 
     public function getComponent()
     {
-        return "notificationtype_course_closed";
+        return "notificationtype_course_available";
     }
 
     public function getName()
@@ -43,12 +43,12 @@ class course_closed_notification extends notification implements notification_ty
 
     public function getSubject()
     {
-        return $this->compile(get_config('notificationtype_course_closed', $this->role . '_subject'));
+        return $this->compile(get_config('notificationtype_course_available', 'subject'));
     }
 
     public function getMessage()
     {
-        return $this->compile(get_config('notificationtype_course_closed', $this->role . '_content'));
+        return $this->compile(get_config('notificationtype_course_available', 'content'));
     }
 
 }

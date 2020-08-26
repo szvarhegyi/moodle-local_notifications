@@ -22,33 +22,12 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace notificationtype_course_started;
+$string['pluginname'] = "Course available notification";
 
+$string['messageprovider:notify'] = 'Course available';
 
-use core_user;
-use \local_notifications\notification;
-use \local_notifications\notification_type;
+$string['notify_subject_default'] = 'Course available';
+$string['notify_content_default'] = 'Egy új kurzus elérhető az eLearning rendszerben. Amennyiben van kedved gyere és végezd el.';
 
-class course_closed_notification extends notification implements notification_type {
-
-    public function getComponent()
-    {
-        return "notificationtype_course_closed";
-    }
-
-    public function getName()
-    {
-        return $this->role;
-    }
-
-    public function getSubject()
-    {
-        return $this->compile(get_config('notificationtype_course_closed', $this->role . '_subject'));
-    }
-
-    public function getMessage()
-    {
-        return $this->compile(get_config('notificationtype_course_closed', $this->role . '_content'));
-    }
-
-}
+$string['subject'] = 'Subject';
+$string['content'] = 'Üzenet';

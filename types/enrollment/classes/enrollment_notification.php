@@ -27,10 +27,31 @@ namespace notificationtype_enrollment;
 
 use core_user;
 use \local_notifications\notification;
+use \local_notifications\notification_type;
 
-class course_enrollment_notification extends notification {
+class enrollment_notification extends notification implements notification_type {
 
     public $isInProgress = true;
+
+    public function getComponent()
+    {
+        return "notificationtype_enrollment";
+    }
+
+    public function getName()
+    {
+        return $this->role;
+    }
+
+    public function getSubject()
+    {
+        return $this->compile(get_config('notificationtype_enrollment', 'message_' . $this->role . '_subject'));
+    }
+
+    public function getMessage()
+    {
+        return $this->compile(get_config('notificationtype_enrollment', 'message_' . $this->role));
+    }
 
     public function setCourseStartInTheFuture() {
         $this->isInProgress = false;
@@ -45,36 +66,7 @@ class course_enrollment_notification extends notification {
             $this->role = 'infuture';
         }
 
-        $data = new \stdClass();
-        $data->fullname = fullname($this->user);
-        $data->coursename = $this->course->fullname;
-        $data->coursestart = date('Y-m-d H:i:s', $this->course->startdate);
-        $data->courselink = $CFG->wwwroot . "/course/view.php?id=" . $this->course->id;
-        $data->forumlink = $this->get_forum_link();
-        $data->teachermails = $this->get_teacher_mail_addresses();
-
-        //Tanárok e-mail címe
-
-
-
-        $eventdata = new \core\message\message();
-        $eventdata->courseid = 1;
-        $eventdata->component = 'notificationtype_enrollment';
-        $eventdata->name = $this->role;
-        $eventdata->notification = 1;
-
-        $eventdata->userfrom = core_user::get_noreply_user();
-        $eventdata->userto = $this->user;
-        $eventdata->subject = get_string('courseenrollment_' . $this->role . '_subject', 'notificationtype_enrollment', $data);
-
-        $eventdata->fullmessage = get_string('courseenrollment_' . $this->role . '_content', 'notificationtype_enrollment', $data);
-        $eventdata->fullmessageformat = FORMAT_PLAIN;
-        $eventdata->fullmessagehtml   = '';
-
-        $eventdata->smallmessage      = '';
-
-        message_send($eventdata);
+        parent::notify();
 
     }
-
 }

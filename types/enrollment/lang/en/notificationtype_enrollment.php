@@ -1,53 +1,50 @@
 <?php
 
-$string['pluginname'] = "Értesítés kurzusra meghívásról";
+$string['pluginname'] = "Notification about course enrollment";
 
 
-$string['messageprovider:inprogress'] = 'Folyamatban lévő kurzus esetén';
-$string['messageprovider:infuture'] = 'Jövőbeni kurzus esetén';
+$string['messageprovider:inprogress'] = 'When the course has already started';
+$string['messageprovider:infuture'] = 'When the course will start in the future';
+
+$string['message_inprogress_subject'] = "When the course has already started subject";
+$string['message_inprogress_subject_default'] = "Course enrollment notification";
+$string['message_inprogress'] = "When the course has already started message";
+$string['message_inprogress_desc'] = "";
+$string['message_inprogress_default'] = 'Dear {$user_fullname},
+
+We would like to notify you that the learning material and/or the tests for the following course,
+{$course_fullname}, is available for you.
+
+Use this link to access the materials: {$course_link}
+
+Please keep in mind that after the deadline, the learning materials will not be available.
+
+If the course contains tests or exams the teachers can set a passing grade. If you score lower than that, 
+you will be notified about the option of retaking the tests or exams.
+
+You may use the Forum ({$course_forum_link}) to ask questions or send an email to {$teachermails}.
+
+Happy learning!
+The Educators';
 
 
-//Meghívó
-$string['courseenrollment_inprogress_subject'] = 'Értesítés kurzusra történő meghívásról';
-$string['courseenrollment_inprogress_content'] = 'Tisztelt {$a->fullname}!
+$string['message_infuture_subject'] = "When the course will start in the future subject";
+$string['message_infuture_subject_default'] = "Notification about course enrollment";
+$string['message_infuture'] = "When the course will start in the future message";
+$string['message_infuture_desc'] = "When the course will start in the future desc";
+$string['message_infuture_default'] = 'Dear {$user_fullname},
 
-Értesítünk, hogy elérhető számodra a {$a->coursename} 
-elektronikus tananyag és/vagy vizsgaanyag.
+We would like to notify you that the learning material and/or the tests for the following course,
+{$course_fullname} will be available from {$course_startdate_formatted}.
 
-Elérési hely: {$a->courselink}
+Use this link to access the materials: {$course_link}
 
-Felhívjuk figyelmedet, hogy a záró dátumot követően az anyagot már nem
-éred el!
+Please keep in mind that after the deadline, the learning materials will not be available.
 
-Amennyiben csak vizsgát tartalmaz az anyag, vagy vizsga is kapcsolódik a
-tananyaghoz, és a tanár megállapított minimum elérendő eredményt, az
-alacsonyabb vizsgaeredményről tájékoztatunk az ismétlés szükségessége
-miatt.
+If the course contains tests or exams the teachers can set a passing grade. If you score lower than that, 
+you will be notified about the option of retaking the tests or exams.
 
-Kérdéseidet felteheted a Fórumon
-({$a->forumlink}), vagy megírhatod az {$a->teachermails} e-mail címre.
+You may use the Forum ({$course_forum_link}) to ask questions or send an email to {$teachermails}.
 
-Eredményes tanulást kívánunk!
-az oktatók';
-
-$string['courseenrollment_infuture_subject'] = 'Értesítés kurzusra történő meghívásról';
-$string['courseenrollment_infuture_content'] = 'Tisztelt {$a->fullname}!
-
-Értesítünk, hogy {$a->coursestart}-tól elérhető számodra a {$a->coursename} 
-elektronikus tananyag és/vagy vizsgaanyag.
-
-Elérési hely: {$a->courselink}
-
-Felhívjuk figyelmedet, hogy a záró dátumot követően az anyagot már nem
-éred el!
-
-Amennyiben csak vizsgát tartalmaz az anyag, vagy vizsga is kapcsolódik a
-tananyaghoz, és a tanár megállapított minimum elérendő eredményt, az
-alacsonyabb vizsgaeredményről tájékoztatunk az ismétlés szükségessége
-miatt.
-
-Kérdéseidet felteheted a Fórumon
-({$a->forumlink}), vagy megírhatod az {$a->teachermails} e-mail címre.
-
-Eredményes tanulást kívánunk!
-az oktatók';
+Happy learning!
+The Educators';

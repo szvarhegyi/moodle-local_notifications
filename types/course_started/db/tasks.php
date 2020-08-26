@@ -28,8 +28,8 @@ $tasks = array(
     array(
         'classname' => '\notificationtype_course_started\task\course_started_student',
         'blocking' => 0,
-        'minute' => '*',
-        'hour' => '*',
+        'minute' => '0',
+        'hour' => '8',
         'day' => '*',
         'month' => '*',
         'dayofweek' => '*',
@@ -37,8 +37,8 @@ $tasks = array(
     array(
         'classname' => '\notificationtype_course_started\task\course_started_teacher',
         'blocking' => 0,
-        'minute' => '*',
-        'hour' => '*',
+        'minute' => '0',
+        'hour' => '8',
         'day' => '*',
         'month' => '*',
         'dayofweek' => '*',

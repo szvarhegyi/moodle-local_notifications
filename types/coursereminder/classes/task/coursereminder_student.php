@@ -74,8 +74,8 @@ class coursereminder_student extends \core\task\scheduled_task
 
         if($field) {
 
-            $start = strtotime(date('Y-m-d 00:00:00'));
-            $end = strtotime(date('Y-m-d 23:59:59'));
+            $start = $this->get_last_run_time();
+            $end = time();
             mtrace('Kurzusok keresese amiknel ebben az intervallumban kell ertesitest kuldeni ' . date('Y-m-d H:i:s', $start) . " - " . date('Y-m-d H:i:s', $end));
 
             $entries = $DB->get_records_sql('SELECT c.* FROM {customfield_data} cd LEFT JOIN {course} c ON c.id = cd.instanceid WHERE

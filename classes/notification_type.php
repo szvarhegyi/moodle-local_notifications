@@ -15,40 +15,22 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Configurable notifications - Course closed notification
+ * Configurable notifications
  *
  * @package     local_notifications
  * @copyright   Várhegyi Szabolcs <sz.varhegyi@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace notificationtype_course_started;
+namespace local_notifications;
 
 
-use core_user;
-use \local_notifications\notification;
-use \local_notifications\notification_type;
+interface notification_type
+{
 
-class course_closed_notification extends notification implements notification_type {
-
-    public function getComponent()
-    {
-        return "notificationtype_course_closed";
-    }
-
-    public function getName()
-    {
-        return $this->role;
-    }
-
-    public function getSubject()
-    {
-        return $this->compile(get_config('notificationtype_course_closed', $this->role . '_subject'));
-    }
-
-    public function getMessage()
-    {
-        return $this->compile(get_config('notificationtype_course_closed', $this->role . '_content'));
-    }
+    public function getComponent();
+    public function getName();
+    public function getSubject();
+    public function getMessage();
 
 }

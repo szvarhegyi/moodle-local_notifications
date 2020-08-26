@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Custom notifications
+ * Configurable notifications
  *
  * @package     local_notifications
  * @copyright   Várhegyi Szabolcs <sz.varhegyi@gmail.com>

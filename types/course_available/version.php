@@ -22,33 +22,9 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace notificationtype_course_started;
+defined('MOODLE_INTERNAL') || die();
 
-
-use core_user;
-use \local_notifications\notification;
-use \local_notifications\notification_type;
-
-class course_closed_notification extends notification implements notification_type {
-
-    public function getComponent()
-    {
-        return "notificationtype_course_closed";
-    }
-
-    public function getName()
-    {
-        return $this->role;
-    }
-
-    public function getSubject()
-    {
-        return $this->compile(get_config('notificationtype_course_closed', $this->role . '_subject'));
-    }
-
-    public function getMessage()
-    {
-        return $this->compile(get_config('notificationtype_course_closed', $this->role . '_content'));
-    }
-
-}
+$plugin->component = 'notificationtype_course_available';
+$plugin->release = '1.0.0';
+$plugin->version = 2020081904;
+$plugin->maturity = MATURITY_STABLE;

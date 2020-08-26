@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Custom notifications
+ * Configurable notifications - Course closed notification
  *
- * @package     notificationtype_course_started
+ * @package     local_notifications
  * @copyright   Várhegyi Szabolcs <sz.varhegyi@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

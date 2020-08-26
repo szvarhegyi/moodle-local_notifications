@@ -1,6 +1,6 @@
 # Custom notifications
 
-After install custom notifications module, you get new notification types in your system.
+After install custom notifications plugin, you get new notification types in your system.
 
 Currenlty four notification type implemented:
 

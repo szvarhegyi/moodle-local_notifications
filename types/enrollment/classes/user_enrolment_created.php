@@ -33,7 +33,7 @@ class user_enrolment_created
         // courseid | relateduserid
         $course = $DB->get_record('course', ['id' => $event->courseid]);
         $user = $DB->get_record('user', ['id' => $event->relateduserid]);
-        $notify = new course_enrollment_notification($course, $user, 'student');
+        $notify = new enrollment_notification($course, $user, 'student');
 
         if(time() < $course->startdate) {
             $notify->setCourseStartInTheFuture();

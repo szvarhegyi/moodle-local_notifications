@@ -27,42 +27,28 @@ namespace notificationtype_course_started;
 
 use core_user;
 use \local_notifications\notification;
+use \local_notifications\notification_type;
 
-class course_started_notification extends notification {
+class course_started_notification extends notification implements notification_type {
 
-    public function notify() {
-        global $CFG, $DB;
+    public function getComponent()
+    {
+        return "notificationtype_course_started";
+    }
 
-        $data = new \stdClass();
-        $data->fullname = fullname($this->user);
-        $data->coursename = $this->course->fullname;
-        $data->coursestart = date('Y-m-d H:i:s', $this->course->startdate);
-        $data->courselink = $CFG->wwwroot . "/course/view.php?id=" . $this->course->id;
-        $data->forumlink = $this->get_forum_link();
-        $data->teachermails = $this->get_teacher_mail_addresses();
+    public function getName()
+    {
+        return $this->role;
+    }
 
-        //Tanárok e-mail címe
+    public function getSubject()
+    {
+        return $this->compile(get_config('notificationtype_course_started', $this->role . '_subject'));
+    }
 
-
-
-        $eventdata = new \core\message\message();
-        $eventdata->courseid = 1;
-        $eventdata->component = 'notificationtype_course_started';
-        $eventdata->name = $this->role;
-        $eventdata->notification = 1;
-
-        $eventdata->userfrom = core_user::get_noreply_user();
-        $eventdata->userto = $this->user;
-        $eventdata->subject = get_string('coursestarted_' . $this->role . '_subject', 'notificationtype_course_started', $data);
-
-        $eventdata->fullmessage = get_string('coursestarted_' . $this->role . '_content', 'notificationtype_course_started', $data);
-        $eventdata->fullmessageformat = FORMAT_PLAIN;
-        $eventdata->fullmessagehtml   = '';
-
-        $eventdata->smallmessage      = '';
-
-        message_send($eventdata);
-
+    public function getMessage()
+    {
+        return $this->compile(get_config('notificationtype_course_started', $this->role . '_content'));
     }
 
 }

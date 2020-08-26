@@ -28,8 +28,8 @@ $tasks = array(
     array(
         'classname' => '\notificationtype_coursereminder\task\coursereminder_student',
         'blocking' => 0,
-        'minute' => '*',
-        'hour' => '*',
+        'minute' => '0',
+        'hour' => '8',
         'day' => '*',
         'month' => '*',
         'dayofweek' => '*',
@@ -37,8 +37,8 @@ $tasks = array(
     array(
         'classname' => '\notificationtype_coursereminder\task\coursereminder_teacher',
         'blocking' => 0,
-        'minute' => '*',
-        'hour' => '*',
+        'minute' => '0',
+        'hour' => '8',
         'day' => '*',
         'month' => '*',
         'dayofweek' => '*',

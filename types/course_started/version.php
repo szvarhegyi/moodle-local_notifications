@@ -26,5 +26,5 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'notificationtype_course_started';
 $plugin->release = '1.0.0';
-$plugin->version = 2020072829;
+$plugin->version = 2020081301;
 $plugin->maturity = MATURITY_STABLE;

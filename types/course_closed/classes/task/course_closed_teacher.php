@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Custom notifications
+ * Configurable notifications - Course closed notification
  *
  * @package     local_notifications
  * @copyright   Várhegyi Szabolcs <sz.varhegyi@gmail.com>
@@ -40,8 +40,8 @@ class course_closed_teacher extends \core\task\scheduled_task
     public function execute()
     {
         global $DB;
-        $start = strtotime(date('Y-m-d 00:00:00'));
-        $end = strtotime(date('Y-m-d 23:59:59'));
+        $start = $this->get_last_run_time();
+        $end = time();
         mtrace('Kurzusok keresese amik ebben az idointervallumban zarultak ' . date('Y-m-d H:i:s', $start) . " - " . date('Y-m-d H:i:s', $end));
         $courses = $DB->get_records_sql("SELECT * FROM {course} WHERE enddate > ? AND enddate BETWEEN ? AND ? AND visible = ?", [
             0, $start, $end, 1

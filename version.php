@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Custom notifications
+ * Configurable notifications
  *
  * @package     local_notifications
  * @copyright   Várhegyi Szabolcs <sz.varhegyi@gmail.com>
@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_notifications';
 $plugin->release = '1.0.0';
-$plugin->version = 2020072827;
+$plugin->version = 2020081301;
 $plugin->requires = 2018051700;
 $plugin->maturity = MATURITY_STABLE;

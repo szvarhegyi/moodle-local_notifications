@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Custom notifications
+ * Configurable notifications - Course closed notification
  *
- * @package     notificationtype_course_started
+ * @package     local_notifications
  * @copyright   Várhegyi Szabolcs <sz.varhegyi@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -28,8 +28,8 @@ $tasks = array(
     array(
         'classname' => '\notificationtype_course_closed\task\course_closed_student',
         'blocking' => 0,
-        'minute' => '*',
-        'hour' => '*',
+        'minute' => '0',
+        'hour' => '8',
         'day' => '*',
         'month' => '*',
         'dayofweek' => '*',
@@ -37,8 +37,8 @@ $tasks = array(
     array(
         'classname' => '\notificationtype_course_closed\task\course_closed_teacher',
         'blocking' => 0,
-        'minute' => '*',
-        'hour' => '*',
+        'minute' => '0',
+        'hour' => '8',
         'day' => '*',
         'month' => '*',
         'dayofweek' => '*',
